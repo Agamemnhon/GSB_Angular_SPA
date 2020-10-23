@@ -1,31 +1,5 @@
 <div>
   <h1>{{title}}</h1>
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Code Praticien</th>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Modifier</th>
-        <th>Supprimer</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let praticien of praticiens">
-        <td>{{ praticien.code_praticien }}</td>
-        <td>{{ praticien.nom_praticien }}</td>
-        <td>{{ praticien.prenom_praticien }}</td>
-        <td><button class="btn btn-primary" (click)="detail(praticien.id_praticien)">Modifier</button>
-        <td><button class="btn btn-primary" (click)="delete(praticien.id_praticien)">Supprimer</button>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div *ngIf="error" class="form-group" >
-      <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
-          <div class="alert-danger" role="alert">
-              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-              {{error}}
-         </div>
-     </div>
+  <app-prat-list [praticiens]="praticiens"></app-prat-list>
+  <app-error [error]="error"></app-error>
 </div>

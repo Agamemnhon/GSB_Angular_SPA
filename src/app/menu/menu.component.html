@@ -17,8 +17,8 @@
                   <a class="dropdown-toggle" href="" data-toggle="dropdown">Listes<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                       <li><a [routerLink]="['/getPraticiens']">Tous les praticiens</a></li>
-                      <li><a >Liste par nom</a></li>
-                      <li><a >Liste par Spécialités</a></li>
+                      <li><a [routerLink]="['/getPraticiens/byName']">Liste par nom</a></li>
+                      <li><a [routerLink]="['/getPraticiens/bySpec']">Liste par Spécialités </a></li>
                   </ul>
               </li>
               <!-- <li *ngIf="isConnected" ><a >Ajouter</a></li> -->

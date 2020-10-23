@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="container">
+    <h1 align="center">Consultation d'un Praticien</h1>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Code Praticien</th>
+          <th>Nom</th>
+          <th>Prénom</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let prat of praticien">
+          <td>{{ prat.code_praticien }}</td>
+          <td>{{ prat.nom_praticien }}</td>
+          <td>{{ prat.prenom_praticien }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h1 align="center">Spécialité(s)</h1>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Spécialité(s)</th>
+          <th>diplome(s)</th>
+          <th>coef. Prescription</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let possede of posseders">
+          <td *ngIf="specialites; then  getLibSpec(possede.id_specialite)">{{ specialite.lib_specialite}}</td>
+          <td>{{ possede.diplome }}</td>
+          <td>{{ possede.coef_prescription }}</td>
+          <td><button class="btn btn-primary" (click)="detail(possede.id_praticien, possede.id_specialite)">Modifier</button>
+          <td><button class="btn btn-primary" (click)="delete(possede.id_praticien, possede.id_specialite)">Supprimer</button>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

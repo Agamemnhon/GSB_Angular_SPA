@@ -11,6 +11,15 @@ import { HomeComponent } from './home/home.component';
 import { PraticienService } from './services/praticien.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PraticiensComponent } from './praticiens/praticiens.component';
+import { CommonService } from './services/common.service';
+import { PossederComponent } from './posseder/posseder.component';
+import { PraticienComponent } from './praticien/praticien.component';
+import { SpecialiteComponent } from './specialite/specialite.component';
+import { PratListComponent } from './prat-list/prat-list.component';
+import { PratBySpecComponent } from './prat-by-spec/prat-by-spec.component';
+import { PratByNameComponent } from './prat-by-name/prat-by-name.component';
+import { ErrorComponent } from './error/error.component';
+import { PossederService } from './services/posseder.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +27,14 @@ import { PraticiensComponent } from './praticiens/praticiens.component';
     MenuComponent,
     LoginComponent,
     HomeComponent,
-    PraticiensComponent
+    PraticiensComponent,
+    PossederComponent,
+    PraticienComponent,
+    SpecialiteComponent,
+    PratListComponent,
+    PratBySpecComponent,
+    PratByNameComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +42,7 @@ import { PraticiensComponent } from './praticiens/praticiens.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [SharedService, PraticienService],
+  providers: [SharedService, PraticienService, CommonService, PossederService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
